@@ -1,293 +1,338 @@
-<!DOCTYPE html>
+                <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 10th Maths - Vatsal Sir</title>
-    <style>
-        /* Theme: Black background, Orange accents, White text */
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #000000; /* Deep black background like the image */
-            margin: 0;
-            padding: 20px;
-            color: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Lectures 👀</title>
 
-        header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #e67e22;
-            margin-bottom: 40px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header h1 {
-            color: #f39c12; /* Vibrant Orange */
-            font-size: 2.5rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 35%, #3b1800 0%, #160900 35%, #050505 75%);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-        header p {
-            color: #bdc3c7;
-            font-style: italic;
-        }
+    /* Background decoration */
+    .glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: #ff6500;
+      filter: blur(150px);
+      opacity: 0.15;
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+    .container {
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+      padding: 45px 25px;
+      border: 1px solid rgba(255, 102, 0, 0.35);
+      border-radius: 25px;
+      background: rgba(10, 10, 10, 0.75);
+      box-shadow:
+        0 0 50px rgba(255, 85, 0, 0.12),
+        inset 0 0 30px rgba(255, 85, 0, 0.03);
+      backdrop-filter: blur(10px);
+    }
 
-        .chapter-card {
-            background: #1a1a1a; /* Dark grey cards */
-            border-left: 10px solid #e67e22; /* Orange accent stripe */
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 35px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
+    .badge {
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 50px;
+      background: rgba(255, 102, 0, 0.12);
+      border: 1px solid rgba(255, 102, 0, 0.4);
+      color: #ff7518;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
 
-        .chapter-card:hover {
-            transform: translateY(-5px);
-        }
+    h1 {
+      font-size: clamp(34px, 7vw, 65px);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
 
-        .chapter-title {
-            color: #f39c12;
-            font-size: 1.8rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            display: inline-block;
-            padding: 5px 20px;
-            background: rgba(243, 156, 18, 0.1);
-            border-radius: 50px;
-        }
+    h1 span {
+      color: #ff6800;
+      text-shadow: 0 0 25px rgba(255, 104, 0, 0.4);
+    }
 
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-        }
+    .subtitle {
+      color: #bdbdbd;
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
 
-        /* Button styling inspired by the 'A, B, C' options in the image */
-        .lec-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e67e22;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 0 #b35d10; /* 3D effect */
-        }
+    .lecture-card {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 25px;
+    }
 
-        .lec-btn:hover {
-            background-color: #d35400;
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(230, 126, 34, 0.3);
-        }
+    .lecture-card h2 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
 
-        .lec-btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 #b35d10;
-        }
+    .lecture-card p {
+      color: #888;
+      font-size: 14px;
+    }
 
-        .no-lec {
-            background-color: #333;
-            color: #777;
-            cursor: not-allowed;
-            box-shadow: none;
-            border: 2px dashed #444;
-        }
+    button {
+      width: 100%;
+      max-width: 430px;
+      border: none;
+      border-radius: 15px;
+      padding: 20px 25px;
+      background: linear-gradient(135deg, #ff7a00, #ff3d00);
+      color: white;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 10px 35px rgba(255, 77, 0, 0.25);
+      transition: 0.2s ease;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .chapter-card { padding: 20px; }
-        }
-      
-    </style>
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 45px rgba(255, 77, 0, 0.4);
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    .small {
+      color: #666;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    /* Prank screen */
+    #prank {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #050505;
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    #prank.show {
+      display: flex;
+      animation: appear 0.4s ease;
+    }
+
+    .prank-content {
+      max-width: 700px;
+    }
+
+    .emoji {
+      font-size: 80px;
+      animation: shake 0.5s infinite alternate;
+    }
+
+    .prank-content h2 {
+      font-size: clamp(45px, 10vw, 90px);
+      color: #ff6500;
+      margin: 20px 0;
+      text-shadow: 0 0 30px rgba(255, 101, 0, 0.5);
+    }
+
+    .prank-content p {
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .back {
+      margin-top: 30px;
+      width: auto;
+      padding: 13px 25px;
+      font-size: 14px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shake {
+      from {
+        transform: rotate(-5deg);
+      }
+      to {
+        transform: rotate(5deg);
+      }
+    }
+
+    /* Fake loading */
+    .loading {
+      display: none;
+      color: #ff6500;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Class 10th Maths Lecture Directory</h1>
-    <p>Premium Content by Vatsal Sir</p>
-</header>
+  <div class="glow"></div>
 
-<div class="container">
+  <main class="container">
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 4: Quadratic Equations</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/KWjc_WV7sqI?si=AOZX5YAINdax9MS0" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/J9SnGp1ulQE" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/QkSXI07GPTw" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/QbM0BEyyA-k?si=xz5f29w3-LRoOpaK" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/KmQM-kXxHig" class="lec-btn" target="_blank">Lecture 5</a>
-        </div>
+    <div class="badge">🔥 EXCLUSIVE • 100% FREE</div>
+
+    <h1>
+      Get Free<br>
+      <span>Lectures</span>
+    </h1>
+
+    <p class="subtitle">
+      Unlock premium Maths lectures by<br>
+      <strong>Vatsal Sir</strong> for Class 10th.
+    </p>
+
+    <div class="lecture-card">
+      <h2>📚 Mathematics • Class 10</h2>
+      <p>Complete lectures • Premium quality • Absolutely FREE</p>
     </div>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 5: Arithmetic Progressions</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/JcROq6ZUI00" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/cXTU4305fJE" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/EVow-_StpOU" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/UTjcEnUrAtg" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/46Kgqh3yo4o" class="lec-btn" target="_blank">Lecture 5</a>
-            <a href="https://youtu.be/ucpiDAE9ijg" class="lec-btn" target="_blank">Lecture 6</a>
-        </div>
+    <button onclick="getLecture()">
+      🎓 GET FREE LECTURES
+    </button>
+
+    <div class="loading" id="loading">
+      Preparing your lecture... ⏳
     </div>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 6: Triangles</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/xSLA0zMw_rg" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/DhD_JY4Wk4g" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/TZRoukf_TQg" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/kwUMw8JhdDo" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/jEyF5PtmNnQ" class="lec-btn" target="_blank">Lecture 5a</a>
-            <a href="https://youtu.be/IctGd1twrfc?si=XSXODDOj0C_o6grF" class="lec-btn" target="_blank">Lecture 5b</a>
-            <a href="https://youtu.be/P0W07QZ2tgM" class="lec-btn" target="_blank">Lecture 6</a>
-            <a href="https://youtu.be/jwWuIzeTUgg?si=oUcTdYcCbzQdUIcv" class="lec-btn" target="_blank">Lecture 7</a>
-        </div>
-    </div>
+    <p class="small">
+      No credit card required • Totally legit 👀
+    </p>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 7: Coordinate Geometry</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/z0yKBgW7o8g" class="lec-btn" target="_blank">Lecture 1</a>
-            <span class="lec-btn no-lec">Lecture 2 (N/A)</span>
-            <a href="https://youtu.be/owKal1-DYKc" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/eN7KFMal3-A?si=MEwqCU3Y0D5UsNXD" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/8BfgvhkzfNs" class="lec-btn" target="_blank">Lecture 5</a>
-            <a href="https://youtu.be/wL9o4Na88SA" class="lec-btn" target="_blank">Lecture 6</a>
-        </div>
-    </div>
+  </main>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 8: Introduction to Trigonometry</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/5cLEauY5cfQ" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/oSZcaiJtob0?si=e8A9Y23525doGeez" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/hYeNauJwITs" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/sr4WH_KWCDw" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/9w7h4fEPP3c?si=i5pTJSV2f3Vs6bWx" class="lec-btn" target="_blank">Lecture 5</a>
-            <a href="https://youtu.be/pePBY5nW19Q" class="lec-btn" target="_blank">Lecture 6</a>
-            <a href="https://youtu.be/zMr_pxSPTcE" class="lec-btn" target="_blank">Lecture 7</a>
-        </div>
-    </div>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 9: Trigonometry Applications</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/-fKb9pxM8fI?si=URQ-T1Z0L6jeBOlI" class="lec-btn" target="_blank">Lecture 1a</a>
-            <a href="https://youtu.be/uv5JZZNw_Gc?si=0L0PWXMV9R_JhgNf" class="lec-btn" target="_blank">Lecture 1b</a>
-            <a href="https://youtu.be/bsRvQIW8ygM" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/80CuZQRVh4E" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/xyvbSco9fbQ" class="lec-btn" target="_blank">Lecture 4</a>
-        </div>
-    </div>
+  <!-- PRANK SCREEN -->
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 10: Circles</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/IQdCqfSd4XY" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/rWF17tlHnLI" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/A22dL91DnQY" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/3FYICw08vXA" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/mWBc-btMKso" class="lec-btn" target="_blank">Lecture 5</a>
-        </div>
-    </div>
+  <section id="prank">
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 11: Areas Related to Circles</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/thHRMPC8xhw" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/goyVqZfzIAc" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/SxkjNZ2bOp0" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/GE6KpcZEU80" class="lec-btn" target="_blank">Lecture 4</a>
-        </div>
-    </div>
+    <div class="prank-content">
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 12: Surface Areas and Volumes</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/7WIW7WQp8hI?si=q1v_7XDpiLfSiaqT" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/nYFs3iUcCT0?si=AjGjOAXXzbi7MANF" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/Wf65BLb6nYA" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/2bdZcWAde1U" class="lec-btn" target="_blank">Lecture 4</a>
-        </div>
-    </div>
+      <div class="emoji">💀</div>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 14: Probability</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/OsFK9BJM9-8" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/LLB7oao18Bg" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/Du9LikmqlAY" class="lec-btn" target="_blank">Lecture 3</a>
-        </div>
-    </div>
+      <h2>LOL! 😂</h2>
 
-    <div class="chapter-card">
-        <h2 class="chapter-title">#Chapter 15: Statistics</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/cppC5wihM8U" class="lec-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/7y0do3v2t4Q" class="lec-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/JzHgfwY87ps" class="lec-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/EVRHZ-CAQHI" class="lec-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/MKRV6JkQ_W0?si=bqI8TZMOC4YUONr9" class="lec-btn" target="_blank">Lecture 5</a>
-            <a href="https://youtu.be/ctDO8UrvsTE" class="lec-btn" target="_blank">Lecture 6</a>
-        </div>
-    </div>
+      <p>
+        You really thought there were free lectures here? 
+        <br>
+        Huhh!? what you think i made this for you!!! 
+        <br>
+        So dont be oversmart!! now go to sir and beg for the lectures ooh you guyzs are sir fav. students na !??
+        <br> awwwww soo sad na🥀!! koi naa hotaa hai hotaa hai!!🤣
+        <br><br>
+        <strong style="color:#ff6500;">
+          YOU GOT FOOLED. 🤡
+        </strong>
+      </p>
 
-</div>
-<div class="container">
-
-    <div class="subject-divider">Physics Lectures</div>
-    <h2>PHYSICS</h2>
-    <div class="chapter-card physics-card">
-        <h2 class="chapter-title">#Chapter 1: Light</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/COQia8uKQsk" class="lec-btn physics-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/zteOIqS77h4" class="lec-btn physics-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/N0uS0U4lA0c" class="lec-btn physics-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/USIpq_g_Ye4" class="lec-btn physics-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/aJXv_PypDS4" class="lec-btn physics-btn" target="_blank">Lecture 5</a>
-            <a href="https://youtu.be/ASC_cHGMDuU" class="lec-btn physics-btn" target="_blank">Lecture 6</a>
-            <a href="https://youtu.be/VZxYZU0AGSs" class="lec-btn physics-btn" target="_blank">Lecture 7</a>
-            <a href="https://youtu.be/GKVe-9slUDY" class="lec-btn physics-btn" target="_blank">Lecture 8</a>
-            <a href="https://youtu.be/X5H8ci5vP-M" class="lec-btn physics-btn" target="_blank">Lecture 9</a>
-            <a href="https://youtu.be/lcppoThJ0Ik" class="lec-btn physics-btn" target="_blank">Lecture 10</a>
-            <a href="https://youtu.be/S0j6WyIF1WU" class="lec-btn physics-btn" target="_blank">Lecture 11</a>
-            <a href="https://youtu.be/eXWGrBmnhnE" class="lec-btn physics-btn" target="_blank">Lecture 12</a>
-        </div>
-    </div>
-
-    <div class="chapter-card physics-card">
-        <h2 class="chapter-title">#Chapter 3: Electricity</h2>
-        <div class="button-grid">
-            <a href="https://youtu.be/LPtR3w4dxYM" class="lec-btn physics-btn" target="_blank">Lecture 1</a>
-            <a href="https://youtu.be/fKlhiMP5a1Q" class="lec-btn physics-btn" target="_blank">Lecture 2</a>
-            <a href="https://youtu.be/4LaKUNvJVhg" class="lec-btn physics-btn" target="_blank">Lecture 3</a>
-            <a href="https://youtu.be/-vI1UrwfCUs" class="lec-btn physics-btn" target="_blank">Lecture 4</a>
-            <a href="https://youtu.be/Rs0uTcf-vYA" class="lec-btn physics-btn" target="_blank">Lecture 5</a>
-            <a href="https://youtu.be/dFObMtx5Ohk" class="lec-btn physics-btn" target="_blank">Lecture 6</a>
-            <a href="https://youtu.be/zLlPh3WIZFQ" class="lec-btn physics-btn" target="_blank">Lecture 7</a>
-            <a href="https://youtu.be/1QDUemU5uno" class="lec-btn physics-btn" target="_blank">Lecture 8</a>
-            <a href="https://youtu.be/Xm_R2m7YLRM" class="lec-btn physics-btn" target="_blank">Lecture 9</a>
-            <a href="https://youtu.be/ZdSD-ukAfE8" class="lec-btn physics-btn" target="_blank">Lecture 10</a>
-        </div>
-    </div>
+      <button class="back" onclick="location.reload()">
+        🔄 Try Again
+      </button>
 
     </div>
-    
+
+  </section>
+
+
+  <script>
+
+    function playFunnySound() {
+
+      // Creates a short, cartoonish "POP/BANG" using Web Audio.
+      // No external audio file is required.
+
+      const AudioContext =
+        window.AudioContext || window.webkitAudioContext;
+
+      if (!AudioContext) return;
+
+      const audio = new AudioContext();
+
+      const oscillator = audio.createOscillator();
+      const gain = audio.createGain();
+
+      oscillator.type = "sawtooth";
+      oscillator.frequency.setValueAtTime(180, audio.currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(
+        45,
+        audio.currentTime + 0.15
+      );
+
+      gain.gain.setValueAtTime(0.5, audio.currentTime);
+      gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.18
+      );
+
+      oscillator.connect(gain);
+      gain.connect(audio.destination);
+
+      oscillator.start();
+      oscillator.stop(audio.currentTime + 0.18);
+    }
+
+
+    function getLecture() {
+
+      const loading = document.getElementById("loading");
+
+      loading.style.display = "block";
+
+      // Fake loading for the prank
+      setTimeout(() => {
+
+        playFunnySound();
+
+        setTimeout(() => {
+          document.getElementById("prank")
+            .classList.add("show");
+        }, 180);
+
+      }, 1200);
+    }
+
+  </script>
+
 </body>
 </html>
